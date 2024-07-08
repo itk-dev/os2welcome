@@ -1,0 +1,32 @@
+[
+    {
+        "id": "01J28YRAANWJNYQ92EBF48CKMS",
+        "title": "DOKK1-Lillesal (Lille sal, niv. 1)",
+        "value": "DOKK1-Lillesal@aarhus.dk"
+    },
+    {
+        "id": "01J28YRAANWJNYQ92EBF48CKMQ",
+        "title": "DOKK1-Lokale-Test1 (Testlokale)",
+        "value": "DOKK1-lokale-test1@aarhus.dk"
+    },
+    {
+        "id": "01J28YRAANWJNYQ92EBF48CKMR",
+        "title": "DOKK1-Lokale-test2 (Lokale Test 2)",
+        "value": "DOKK1-Lokale-test2@aarhus.dk"
+    },
+    {
+        "id": "01J28YRAANWJNYQ92EBF48CKMT",
+        "title": "DOKK1-M2-3 (M2.3 ITK)",
+        "value": "DOKK1-M2-3@aarhus.dk"
+    },
+    {
+        "id": "01J28YRAANWJNYQ92EBF48CKMV",
+        "title": "DOKK1-M2-4 (M2.4 ITK)",
+        "value": "DOKK1-M2-4@aarhus.dk"
+    },
+    {
+        "id": "01J28YRAANWJNYQ92EBF48CKMW",
+        "title": "DOKK1-M2-5 (M2.5 ITK)",
+        "value": "DOKK1-M2-5@aarhus.dk"
+    }
+]

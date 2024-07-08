@@ -1,0 +1,49 @@
+{
+    "pages": [
+        {
+            // Do not change id
+            "id": 1,
+             // Do not change type
+            "type": "video",
+            // Change pageTitle
+            "pageTitle": "Avatar",
+            // Change buttontext
+            "buttonText": "Avatar"
+        },
+        {
+            // Do not change id
+            "id": 2,
+             // Do not change type
+            "type": "calendar",
+            // Change pageTitle
+            "pageTitle": "Møder",
+            // Change buttontext
+            "buttonText": "Møder"
+        },
+        {
+            // Do not change id
+            "id": 3,
+             // Do not change type
+            "type": "iframe",
+             // Change url
+            "url": "https://itk.aarhus.dk/kontakt/kontakt-medarbejder",
+            // Change pageTitle
+            "pageTitle": "ITK",
+            // Change buttontext
+            "buttonText": "ITK"
+        },
+        {
+            // This is the image that directs the user to the audio book on the wall
+            // Do not change id
+            "id": 4,
+             // Do not change type
+            "type": "image",
+             // Change url
+            "url": "https://unsplash.com/photos/KRztl5I6xac",
+            // Change pageTitle
+            "pageTitle": "Lydbog",
+            // Change buttontext
+            "buttonText": "Lydbog"
+        }
+    ]
+}
