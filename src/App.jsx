@@ -9,12 +9,16 @@ import localizedFormat from "dayjs/plugin/localizedFormat";
 function App() {
   const { pages } = config;
   const [selectedFrame, setSelectedFrame] = useState(pages[0]);
+
   function changeFrame(page) {
     setSelectedFrame(page);
   }
+
   useEffect(() => {
     dayjs.extend(localizedFormat);
   }, []);
+
+  // The following is stolen from os2display :)
   const renderTimeOfDay = (unixTimestamp) => {
     return dayjs(unixTimestamp * 1000)
       .locale(localeDa)
@@ -30,7 +34,7 @@ function App() {
         .filter(
           (e) => e.endTime > now.unix() && e.endTime <= now.endOf("day").unix()
         )
-        // Stolen from os2display :)
+
         .forEach((event) => {
           if (elements.length < 3) {
             elements.push(
