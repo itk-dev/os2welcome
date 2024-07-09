@@ -62,53 +62,51 @@ function App() {
   };
 
   return (
-    <>
-      <div className="welcome-container relative pb-fluid-lg bg-thd-color-violet-20 relative pt-fluid-lg ">
-        {selectedFrame?.pageTitle && (
-          <h1 className="header text-7xl  text-center my-8 font-bold">
-            {selectedFrame?.pageTitle}
-          </h1>
+    <div className="welcome-container">
+      {selectedFrame?.pageTitle && (
+        <h1 className="header text-7xl text-center my-8 font-bold">
+          {selectedFrame?.pageTitle}
+        </h1>
+      )}
+      <section className="main">
+        {selectedFrame?.type.toLowerCase() === "image" && (
+          <img src={selectedFrame.url} alt={selectedFrame.alt}></img>
         )}
-        <section className="main">
-          {selectedFrame?.type.toLowerCase() === "image" && (
-            <img src={selectedFrame.url} alt={selectedFrame.alt}></img>
-          )}
-          {selectedFrame?.type.toLowerCase() === "iframe" && (
-            <iframe src={selectedFrame.url} className="" width="100%"></iframe>
-          )}
-          {selectedFrame?.type.toLowerCase() === "video" && (
-            <video autoPlay width="100%" height="100%" muted={false}>
-              <source key={selectedFrame.url} src={selectedFrame.url} />
-            </video>
-          )}
-          {selectedFrame?.type.toLowerCase() === "calendar" && (
-            <div className="calendar-wrapper">
-              <div className="calendar-content">
-                {meetings?.length > 0 && renderSingle(meetings)}
-              </div>
+        {selectedFrame?.type.toLowerCase() === "iframe" && (
+          <iframe src={selectedFrame.url} className="" width="100%"></iframe>
+        )}
+        {selectedFrame?.type.toLowerCase() === "video" && (
+          <video autoPlay width="100%" height="100%" muted={false}>
+            <source key={selectedFrame.url} src={selectedFrame.url} />
+          </video>
+        )}
+        {selectedFrame?.type.toLowerCase() === "calendar" && (
+          <div className="calendar-wrapper">
+            <div className="calendar-content">
+              {meetings?.length > 0 && renderSingle(meetings)}
             </div>
-          )}
-        </section>
-        {pages && (
-          <>
-            {pages.map((page) => {
-              const { id, buttonText } = page;
-              return (
-                <div key={id} className="button">
-                  <button
-                    type="button"
-                    className="text-dark-800 font-bold py-2 px-4 border rounded shadow"
-                    onClick={() => changeFrame(page)}
-                  >
-                    {buttonText}
-                  </button>
-                </div>
-              );
-            })}
-          </>
+          </div>
         )}
-      </div>
-    </>
+      </section>
+      {pages && (
+        <>
+          {pages.map((page) => {
+            const { id, buttonText } = page;
+            return (
+              <div key={id} className="button">
+                <button
+                  type="button"
+                  className="font-bold rounded"
+                  onClick={() => changeFrame(page)}
+                >
+                  {buttonText}
+                </button>
+              </div>
+            );
+          })}
+        </>
+      )}
+    </div>
   );
 }
 
