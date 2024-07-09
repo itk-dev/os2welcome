@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,10 +9,85 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+iframe {
+  height: 100%;
+}
+
+.welcome-container {
+  height: 100vh;
+  /* grid container settings */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header header"
+    "main main main main"
+    "button button button button";
+}
+h1 {
+  color: #2c3454
+}
+
+.welcome-container > .header {
+  grid-area: header;
+}
+.welcome-container > .main {
+  grid-area: main;
+}
+.welcome-container > .footer {
+  row-gap: 1em;
+  grid-area: footer;
+}
+
+.button{
+padding: 0 10px 10px 0;
+}
+
+.button:first-of-type {
+  padding: 0 10px 10px 10px;
+}
+
+button {
+  height: 100px;
+  width: 100%;
+  font-size: 25px;
+  background: #6cd37b;
+  color: #f0efec;
+}
+
+.wrapper {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-item {
+  color: #2c3454;
+  border-left: 5px solid #6cd37b;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  font-size: 40px;
+
+}
+.content-item &:first-of-type {
+  font-size: 20px;
+}
+
+.meta {
+  opacity: 0.75;
+  font-size: smaller;
+  color: inherit;
 }
