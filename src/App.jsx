@@ -30,6 +30,7 @@ function App() {
         .filter(
           (e) => e.endTime > now.unix() && e.endTime <= now.endOf("day").unix()
         )
+        // Stolen from os2display :)
         .forEach((event) => {
           if (elements.length < 3) {
             elements.push(
@@ -37,8 +38,8 @@ function App() {
                 key={event.id}
                 className={
                   elements.length === 0
-                    ? "content-item single--now"
-                    : "content-item single--next"
+                    ? "calendar-content-item now"
+                    : "calendar-content-item next"
                 }
               >
                 <div className="meta">
@@ -77,8 +78,8 @@ function App() {
             </video>
           )}
           {selectedFrame?.type.toLowerCase() === "calendar" && (
-            <div className="wrapper calendar-single template-calendar">
-              <div className="content">
+            <div className="calendar-wrapper">
+              <div className="calendar-content">
                 {meetings?.length > 0 && renderSingle(meetings)}
               </div>
             </div>
