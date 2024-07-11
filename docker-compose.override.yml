@@ -4,13 +4,8 @@ services:
 
   node:
     image: node:20
-    command: npm run dev
     working_dir: /app
     networks:
       - app
-    ports:
-      - "3000:3000"
-    environment:
-      - NODE_ENV=development
     volumes:
-      - .:/app:delegated
+      - .:/app

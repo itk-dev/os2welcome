@@ -19,7 +19,7 @@ services:
       - .:/app
     environment:
       NGINX_FPM_SERVICE: ${COMPOSE_PROJECT_NAME}-phpfpm-1:9000
-      NGINX_WEB_ROOT: /app/public
+      NGINX_WEB_ROOT: /app/dist
       NGINX_PORT: 8080
       NGINX_MAX_BODY_SIZE: 5M
     labels:

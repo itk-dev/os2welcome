@@ -9,7 +9,6 @@ export default defineConfig({
   build: {
     minify: false,
   },
-  base: 'os2welcome',
   plugins: [
     react(),
     json5Plugin(),
