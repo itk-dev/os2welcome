@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite  --host 0.0.0.0",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint:js": "eslint --ext .js --ext .jsx ./src",
+    "lint:js:fix": "eslint --ext .js --ext .jsx --fix ./src",
+    "check-coding-standards": "npm run lint:js",
+    "apply-coding-standards": "npm run lint:js:fix"
   },
   "dependencies": {
     "autoprefixer": "^10.4.19",

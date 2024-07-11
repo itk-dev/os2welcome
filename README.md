@@ -77,3 +77,13 @@ The 4 different pages that is switched between with the four buttons. All entrie
   ],
 }
 ```
+
+## Coding standards
+
+```bash
+docker compose run --rm node yarn check-coding-standards
+```
+
+```bash
+docker compose run --rm node yarn apply-coding-standards
+```
