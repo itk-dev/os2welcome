@@ -15,7 +15,6 @@ function App() {
     setSelectedFrame(page);
   }
 
- 
   useEffect(() => {
     dayjs.extend(localizedFormat);
   }, []);
@@ -71,8 +70,8 @@ function App() {
         </h1>
       )}
       <section className="main">
-        {selectedFrame?.type.toLowerCase() === "image" && (
-          <img src={selectedFrame.url} alt={selectedFrame.alt}></img>
+        {selectedFrame?.type.toLowerCase() === "audio" && (
+          <iframe width="100%" src={selectedFrame.url} ></iframe>
         )}
         {selectedFrame?.type.toLowerCase() === "iframe" && (
           <iframe src={selectedFrame.url} className="" width="100%"></iframe>
