@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* [PR-2](https://github.com/itk-dev/os2welcome/pull/2)
+  - Fix linting in pr.yml
+  - Add linting scripts to package.json
+  - Add entry in README on linting
+
 * [PR-1](https://github.com/itk-dev/os2welcome/pull/1)
   Prevented service from starting
 
