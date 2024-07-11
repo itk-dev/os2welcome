@@ -10,7 +10,7 @@
       // Change buttontext
       buttonText: "Avatar",
       // Change url
-      url: " https://videos.pexels.com/video-files/26957373/12036862_2560_1440_25fps.mp4",
+      url: "https://media.videotool.dk/?vn=467_2024071114321356783435329104",
     },
     {
       // Do not change id
@@ -45,9 +45,7 @@
       // Change pageTitle
       pageTitle: "Lydbog",
       // Change buttontext
-      buttonText: "Lydbog",
-      // What does it say in the image? this should go in the alt text
-      alt: "A picture of a happy happy dog",
+      buttonText: "Lydbog"
     },
   ],
 }
