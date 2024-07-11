@@ -28,7 +28,6 @@ jobs:
       - name: npm audit
         run: npm audit
 
-
   assets-coding-standards:
     name: Assets coding standards
     runs-on: ubuntu-latest
