@@ -2,35 +2,18 @@
 
 React built with vite.
 
-## Locally
+## Development
 
 ```shell
-npm run dev
-```
-
-
-```shell
-npm run build
-```
-
-
-## Running this app in docker
-
-```sh
-docker compose run node npm install
-docker compose up --detach
+docker compose pull
+docker compose run --rm node npm install
+docker compose up --detach --remove-orphans
 open "http://$(docker compose port nginx 8080)"
-
-# Alternatively
-itkdev-docker-compose open
 ```
-
 
 ## .env.local
 
-```bash
+```shell
 # The location of the api
-COMPOSE_PROJECT_NAME=os2welcome
-COMPOSE_DOMAIN=os2welcome.local.itkdev.dk
 VITE_APP_MEETING__ENDPOINT_API=meetings.json # Todo: This should be changed
 ```
