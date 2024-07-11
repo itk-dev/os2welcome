@@ -9,3 +9,7 @@ services:
       - app
     volumes:
       - .:/app
+    # we don't want this service to start.
+    # See https://stackoverflow.com/a/77001347/2502647 for details.
+    profiles:
+      - dummy-profile
