@@ -4,7 +4,7 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended"
   ],
-  "plugins": ["react", "react-hooks"],
+  "plugins": ["react", "react-hooks", "only-warn"],
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",

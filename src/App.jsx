@@ -2,18 +2,20 @@ import { useState, useEffect } from "react";
 import config from "../public/config.json5";
 import localeDa from "dayjs/locale/da";
 import dayjs from "dayjs";
-import meetings from "../os2display-reponse-meetings";
-
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import useFetch from "react-fetch-hook";
 
 function App() {
+  // Todo: I imagine meetings will be fetched here, obv not from that json file
+  // Todo: We should do something with isloading and error
+  const { data: meetings, isLoading, error} = useFetch(import.meta.env.VITE_APP_MEETING__ENDPOINT_API);
   const { pages } = config;
   const [selectedFrame, setSelectedFrame] = useState(pages[0]);
-
   function changeFrame(page) {
     setSelectedFrame(page);
   }
 
+ 
   useEffect(() => {
     dayjs.extend(localizedFormat);
   }, []);
@@ -80,7 +82,7 @@ function App() {
             <source key={selectedFrame.url} src={selectedFrame.url} />
           </video>
         )}
-        {selectedFrame?.type.toLowerCase() === "calendar" && (
+        {selectedFrame?.type.toLowerCase() === "calendar" && meetings?.length > 0 && (
           <div className="calendar-wrapper">
             <div className="calendar-content">
               {meetings?.length > 0 && renderSingle(meetings)}
