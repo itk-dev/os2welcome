@@ -7,8 +7,8 @@ import useFetch from "react-fetch-hook";
 
 function App() {
   // Todo: I imagine meetings will be fetched here, obv not from that json file
-  // Todo: We should do something with isloading and error
-  const { data: meetings, isLoading, error} = useFetch(import.meta.env.VITE_APP_MEETING__ENDPOINT_API);
+  // Todo: We should do something with isloading and error (returned from useFetch)
+  const { data: meetings } = useFetch(import.meta.env.VITE_APP_MEETING__ENDPOINT_API);
   const { pages } = config;
   const [selectedFrame, setSelectedFrame] = useState(pages[0]);
   function changeFrame(page) {
