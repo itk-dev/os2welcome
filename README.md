@@ -1,4 +1,6 @@
-# React + Vite
+# OS2Welcome 
+
+React built with vite.
 
 ## Locally
 
