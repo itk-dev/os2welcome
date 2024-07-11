@@ -1,6 +1,7 @@
 {
   pages: [
     {
+      // This is the avatar page
       // Do not change id
       id: 1,
       // Do not change type
@@ -13,6 +14,7 @@
       url: "https://media.videotool.dk/?vn=467_2024071114321356783435329104",
     },
     {
+      // This is the calendar/meeting page
       // Do not change id
       id: 2,
       // Do not change type
@@ -23,6 +25,7 @@
       buttonText: "Møder",
     },
     {
+      // This is he iframed ITK webpage
       // Do not change id
       id: 3,
       // Do not change type
@@ -35,7 +38,7 @@
       buttonText: "ITK",
     },
     {
-      // This is the image that directs the user to the audio book on the wall
+      // This is the audio book entry
       // Do not change id
       id: 4,
       // Do not change type
