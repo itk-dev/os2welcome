@@ -69,17 +69,20 @@ function App() {
           {selectedFrame?.pageTitle}
         </h1>
       )}
+      {!selectedFrame?.pageTitle && (
+        <h1 className="header text-7xl text-center my-8 font-bold">
+         
+        </h1>
+      )}
       <section className="main">
         {selectedFrame?.type.toLowerCase() === "audio" && (
           <iframe width="100%" src={selectedFrame.url} ></iframe>
         )}
         {selectedFrame?.type.toLowerCase() === "iframe" && (
-          <iframe src={selectedFrame.url} className="" width="100%"></iframe>
+          <iframe src={selectedFrame.url} width="100%"></iframe>
         )}
         {selectedFrame?.type.toLowerCase() === "video" && (
-          <video autoPlay width="100%" height="100%" muted={false}>
-            <source key={selectedFrame.url} src={selectedFrame.url} />
-          </video>
+          <iframe src={selectedFrame.url} width="100%"></iframe>
         )}
         {selectedFrame?.type.toLowerCase() === "calendar" && meetings?.length > 0 && (
           <div className="calendar-wrapper">
