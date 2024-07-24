@@ -37,5 +37,6 @@ jobs:
 
       - name: Coding standards
         run: |
-          docker run --volume ${PWD}:/app --rm node:20 yarn --cwd /app install
-          docker run --volume ${PWD}:/app --rm node:20 yarn --cwd /app prettier src --check
+          docker network create frontend
+          docker compose run --rm node npm install
+          docker compose run --rm node npm run check-coding-standards
