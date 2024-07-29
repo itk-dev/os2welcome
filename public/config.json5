@@ -11,7 +11,7 @@
       // Change buttontext
       buttonText: "Avatar",
       // Change url
-      url: "https://player.vimeo.com/video/989455971?h=33eaeefd8c",
+      url: "media/velkommen.mp4",
     },
     {
       // This is the calendar/meeting page
@@ -44,7 +44,7 @@
       // Do not change type
       type: "audio",
       // Change url
-      url: "https://media.videotool.dk/?vn=467_2024071114551733221498156038",
+      url: "media/lydbog.mp3",
       // Change pageTitle
       pageTitle: "Lydbog",
       // Change buttontext

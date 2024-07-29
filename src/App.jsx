@@ -11,6 +11,7 @@ function App() {
   const { data: meetings } = useFetch(import.meta.env.VITE_APP_MEETING__ENDPOINT_API);
   const { pages } = config;
   const [selectedFrame, setSelectedFrame] = useState(pages[0]);
+
   function changeFrame(page) {
     setSelectedFrame(page);
   }
@@ -19,7 +20,6 @@ function App() {
     dayjs.extend(localizedFormat);
   }, []);
 
-  // The following is stolen from os2display :)
   const renderTimeOfDay = (unixTimestamp) => {
     return dayjs(unixTimestamp * 1000)
       .locale(localeDa)
@@ -62,55 +62,68 @@ function App() {
     return elements.concat();
   };
 
+  useEffect(() => {
+    const type = selectedFrame?.type.toLowerCase();
+    let element;
+
+    switch (type) {
+      case 'audio':
+      case 'video':
+        element = document.getElementById('media-element');
+        element.play();
+        break;
+    }
+
+  }, [selectedFrame]);
+
   return (
-    <div className="welcome-container">
-      {selectedFrame?.pageTitle && (
+      <div className="welcome-container">
         <h1 className="header text-7xl text-center my-8 font-bold">
-          {selectedFrame?.pageTitle}
+          {selectedFrame?.pageTitle ?? ' '}
         </h1>
-      )}
-      {!selectedFrame?.pageTitle && (
-        <h1 className="header text-7xl text-center my-8 font-bold">
-         
-        </h1>
-      )}
-      <section className="main">
-        {selectedFrame?.type.toLowerCase() === "audio" && (
-          <iframe width="100%" src={selectedFrame.url} ></iframe>
-        )}
-        {selectedFrame?.type.toLowerCase() === "iframe" && (
-          <iframe src={selectedFrame.url} width="100%"></iframe>
-        )}
-        {selectedFrame?.type.toLowerCase() === "video" && (
-          <iframe src={selectedFrame.url} width="100%"></iframe>
-        )}
-        {selectedFrame?.type.toLowerCase() === "calendar" && meetings?.length > 0 && (
-          <div className="calendar-wrapper">
-            <div className="calendar-content">
-              {meetings?.length > 0 && renderSingle(meetings)}
-            </div>
-          </div>
-        )}
-      </section>
-      {pages && (
-        <>
-          {pages.map((page) => {
-            const { id, buttonText } = page;
-            return (
-              <div key={id} className="button">
-                <button
-                  type="button"
-                  className="font-bold rounded"
-                  onClick={() => changeFrame(page)}
-                >
-                  {buttonText}
-                </button>
+        <section className="main">
+          {selectedFrame?.type.toLowerCase() === "audio" && (
+              <audio controls id="media-element">
+                <source src={selectedFrame.url} type="audio/mpeg"/>
+                Your browser does not support the audio element.
+              </audio>
+          )}
+          {selectedFrame?.type.toLowerCase() === "iframe" && (
+              <iframe src={selectedFrame.url} width="100%"></iframe>
+          )}
+          {selectedFrame?.type.toLowerCase() === "video" && (
+              <video width="100%" controls id="media-element">
+                <source src={selectedFrame.url} type="video/mp4"/>
+                Your browser does not support the video element.
+              </video>
+          )}
+          {selectedFrame?.type.toLowerCase() === "calendar" && meetings?.length > 0 && (
+              <div className="calendar-wrapper">
+                <div className="calendar-content">
+                  {meetings?.length > 0 && renderSingle(meetings)}
+                </div>
               </div>
-            );
-          })}
-        </>
-      )}
-    </div>
+          )}
+        </section>
+        {pages && (
+            <>
+              {pages.map((page) => {
+                const {id, buttonText} = page;
+                return (
+                    <div key={id} className="button">
+                      <button
+                          type="button"
+                          className="font-bold rounded"
+                          onClick={() => changeFrame(page)}
+                      >
+                        {buttonText}
+                      </button>
+                    </div>
+                );
+              })}
+            </>
+        )}
+      </div>
   );
 }
 
