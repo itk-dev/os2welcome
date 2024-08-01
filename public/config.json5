@@ -1,54 +1,32 @@
 {
-  pages: [
+  "pages": [
     {
-      // This is the avatar page
-      // Do not change id
-      id: 1,
-      // Do not change type
-      type: "video",
-      // Change pageTitle
-      pageTitle: "Avatar",
-      // Change buttontext
-      buttonText: "Avatar",
-      // Change url
-      url: "media/velkommen.mp4",
+      "id": 1,
+      "type": "video",
+      "pageTitle": "Avatar",
+      "buttonText": "Avatar",
+      "url": "media/velkommen.mp4"
     },
     {
-      // This is the calendar/meeting page
-      // Do not change id
-      id: 2,
-      // Do not change type
-      type: "calendar",
-      // Change pageTitle
-      pageTitle: "Møder",
-      // Change buttontext
-      buttonText: "Møder",
+      "id": 2,
+      "type": "calendar",
+      "pageTitle": "Møder",
+      "buttonText": "Møder"
     },
     {
-      // This is he iframed ITK webpage
-      // Do not change id
-      id: 3,
-      // Do not change type
-      type: "iframe",
-      // Change url
-      url: "https://itk.aarhus.dk/kontakt/kontakt-medarbejder",
-      // Change pageTitle
-      pageTitle: "ITK",
-      // Change buttontext
-      buttonText: "ITK",
+      "id": 3,
+      "type": "iframe",
+      "url": "https://itk.aarhus.dk/kontakt/kontakt-medarbejder",
+      "pageTitle": "ITK",
+      "buttonText": "ITK"
     },
     {
-      // This is the audio book entry
-      // Do not change id
-      id: 4,
-      // Do not change type
-      type: "audio",
-      // Change url
-      url: "media/lydbog.mp3",
-      // Change pageTitle
-      pageTitle: "Lydbog",
-      // Change buttontext
-      buttonText: "Lydbog"
-    },
-  ],
+      "id": 4,
+      "type": "audio",
+      "url": "media/lydbog.mp3",
+      "pageTitle": "Lydbog",
+      "buttonText": "Lydbog",
+      "poster": "media/lydbog-back.jpg"
+    }
+  ]
 }
